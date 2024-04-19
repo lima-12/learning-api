@@ -1,7 +1,13 @@
 <?php
+// echo 'debug'; exit;
+
 defined('CONTROL') or die('acesso inválido');
 
-$api = new ApiConsumer();
+// echo 'debug'; exit;
+$api = new ApiConsumerFilmes();
+// echo '<br>construct funcionando!'; exit;
+
+
 // $name = $api->get_film("hulk");
 // $brazil = $api->get_country('brazil');   
 

@@ -1,6 +1,6 @@
 <?php
 
-$api = new ApiConsumer();
+$api = new ApiConsumerFilmes();
 
 $aFilme = $api->get_film($_POST['filme']);
 

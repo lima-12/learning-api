@@ -1,14 +1,22 @@
 <?php
 
-class ApiConsumer
+class ApiConsumerFilmes
 {
+
+    private $omdb_api_key; 
+
+    public function __construct()
+    {
+        include __DIR__ . '../../../config.php';
+        $this->omdb_api_key = OMDB_API_KEY;
+    }
+
     private function api($endpoint, $method = 'GET', $post_filds = [])
     {
         $curl = curl_init();
 
         curl_setopt_array($curl, [
-            CURLOPT_URL => "http://www.omdbapi.com/?t=".$endpoint."+&apikey=5c1b28a9",
-            // CURLOPT_URL => "https://api.themoviedb.org/3/movie/".$endpoint."?api_key=67f661592fbeff837924d14167099dfe",
+            CURLOPT_URL => "http://www.omdbapi.com/?t=".$endpoint."+&apikey=".$this->omdb_api_key,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_SSL_VERIFYPEER => false,
             CURLOPT_ENCODING => "",
